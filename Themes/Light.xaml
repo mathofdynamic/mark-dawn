@@ -1,0 +1,33 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Window / panel backgrounds -->
+    <SolidColorBrush x:Key="WindowBgBrush"      Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="ToolbarBgBrush"     Color="#F3F3F3"/>
+    <SolidColorBrush x:Key="MenuBgBrush"        Color="#EBEBEB"/>
+    <SolidColorBrush x:Key="SurfaceBrush"       Color="#F3F3F3"/>
+    <SolidColorBrush x:Key="EditorBgBrush"      Color="#FAFAFA"/>
+
+    <!-- Borders -->
+    <SolidColorBrush x:Key="BorderBrush"        Color="#DCDCDC"/>
+    <SolidColorBrush x:Key="BorderHoverBrush"   Color="#BDBDBD"/>
+    <SolidColorBrush x:Key="SplitterBrush"      Color="#DCDCDC"/>
+
+    <!-- Text -->
+    <SolidColorBrush x:Key="TextPrimaryBrush"   Color="#1E1E1E"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#717171"/>
+    <SolidColorBrush x:Key="TextModifiedBrush"  Color="#C25400"/>
+    <SolidColorBrush x:Key="EditorFgBrush"      Color="#1E1E1E"/>
+    <SolidColorBrush x:Key="LineNumberFgBrush"  Color="#AAAAAA"/>
+
+    <!-- Buttons -->
+    <SolidColorBrush x:Key="BtnBgBrush"         Color="Transparent"/>
+    <SolidColorBrush x:Key="BtnHoverBgBrush"    Color="#E8E8E8"/>
+    <SolidColorBrush x:Key="BtnPressedBgBrush"  Color="#0078D4"/>
+
+    <!-- Accent -->
+    <SolidColorBrush x:Key="AccentBrush"        Color="#0078D4"/>
+    <SolidColorBrush x:Key="StatusBarBgBrush"   Color="#0078D4"/>
+    <SolidColorBrush x:Key="StatusBarFgBrush"   Color="#FFFFFF"/>
+
+</ResourceDictionary>
