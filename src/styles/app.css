@@ -1,0 +1,239 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Segoe UI", -apple-system, sans-serif;
+  font-size: 13px;
+}
+
+/* ── Theme custom properties ── */
+[data-theme="dark"] {
+  --window-bg: #1E1E1E;
+  --toolbar-bg: #252526;
+  --menu-bg: #252526;
+  --border: #3C3C3C;
+  --text-primary: #D4D4D4;
+  --text-secondary: #858585;
+  --status-bar-bg: #007ACC;
+  --status-bar-fg: #FFFFFF;
+  --btn-hover-bg: #3C3C3C;
+  --btn-pressed-bg: #007ACC;
+  --gutter-bg: #3C3C3C;
+}
+
+[data-theme="light"] {
+  --window-bg: #FFFFFF;
+  --toolbar-bg: #F3F3F3;
+  --menu-bg: #F3F3F3;
+  --border: #DCDCDC;
+  --text-primary: #1E1E1E;
+  --text-secondary: #6B6B6B;
+  --status-bar-bg: #0078D4;
+  --status-bar-fg: #FFFFFF;
+  --btn-hover-bg: #E0E0E0;
+  --btn-pressed-bg: #0078D4;
+  --gutter-bg: #DCDCDC;
+}
+
+/* ── App layout ── */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--window-bg);
+  color: var(--text-primary);
+}
+
+/* ── Toolbar ── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 6px;
+  background: var(--toolbar-bg);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+
+.toolbar::-webkit-scrollbar {
+  height: 0;
+}
+
+.tb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  padding: 0 8px;
+  margin: 0 1px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tb-btn:hover {
+  background: var(--btn-hover-bg);
+}
+
+.tb-btn:active {
+  background: var(--btn-pressed-bg);
+  color: white;
+}
+
+.tb-code {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.tb-sep {
+  display: inline-block;
+  width: 1px;
+  height: 18px;
+  margin: 0 5px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ── Settings group (right side of toolbar) ── */
+.tb-settings {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  padding-left: 8px;
+  flex-shrink: 0;
+}
+
+.tb-select {
+  height: 24px;
+  padding: 0 4px;
+  background: var(--window-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  outline: none;
+}
+
+.tb-select:hover {
+  border-color: var(--text-secondary);
+}
+
+.tb-select:focus {
+  border-color: var(--status-bar-bg);
+}
+
+.tb-select-narrow {
+  width: 58px;
+}
+
+.tb-toggle {
+  font-size: 12px;
+  min-width: 32px;
+}
+
+.tb-active {
+  background: var(--status-bar-bg);
+  color: white;
+}
+
+.tb-active:hover {
+  background: var(--status-bar-bg);
+  opacity: 0.9;
+}
+
+/* ── Content area ── */
+.content-area {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Editor pane: flex column so editor-container fills height and cm-editor can scroll */
+.editor-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ── Split.js gutter ── */
+.gutter {
+  width: 5px;
+  background: var(--gutter-bg);
+  cursor: col-resize;
+  flex-shrink: 0;
+}
+
+.gutter-horizontal {
+  background: var(--gutter-bg);
+  cursor: col-resize;
+}
+
+/* ── Solo pane modes ── */
+.editor-only {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.preview-only {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* ── Status bar ── */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  padding: 0 10px 0 12px;
+  background: var(--status-bar-bg);
+  color: var(--status-bar-fg);
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.status-left, .status-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-modified {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  opacity: 0.9;
+}
+
+.status-words, .status-position {
+  opacity: 0.85;
+}
+
+.status-divider {
+  opacity: 0.45;
+  margin: 0 4px;
+}

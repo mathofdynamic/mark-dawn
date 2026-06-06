@@ -1,7 +1,15 @@
-bin/
-obj/
-publish/
+node_modules/
+dist/
+dist-electron/
 *.user
 *.suo
 .vs/
-*.exe.WebView2/
+
+# Temp/test files
+logo-square.png
+*.ps1
+test-*.png
+typing-*.png
+final-*.png
+screenshot*.png
+test-file.md
